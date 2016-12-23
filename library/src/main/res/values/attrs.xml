@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="EmptyContentLayout">
+        <attr name="em_contentLayoutId" format="reference" />
+        <attr name="em_loadingLayoutId" format="reference" />
+        <attr name="em_emptyLayoutId" format="reference" />
+        <attr name="em_errorLayoutId" format="reference" />
+    </declare-styleable>
+
+</resources>
