@@ -8,7 +8,7 @@ import com.google.gson.reflect.TypeToken;
 import com.mph.basedroid.adapter.CityAdapter;
 import com.mph.basedroid.entity.City;
 import com.mph.library.base.BaseActivity;
-import com.mph.library.log.XLog;
+import com.mph.library.log.xLog;
 import com.mph.library.net.MyOkHttp;
 import com.mph.library.net.response.JsonResponseHandler;
 import com.mph.library.util.JsonUtil;
@@ -84,12 +84,12 @@ public class CityActivity extends BaseActivity {
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
-                        XLog.json(response.toString());
+                        xLog.json(response.toString());
                     }
 
                     @Override
                     public void onFailure(int statusCode, String error_msg) {
-                        XLog.d("CityActivity", error_msg);
+                        xLog.d("CityActivity", error_msg);
                         emptyLayout.showError();
                     }
                 });

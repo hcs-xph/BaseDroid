@@ -32,12 +32,12 @@ public class BasePagerAdapter extends PagerAdapter {
     }
 
     @Override
-    public void destroyItem(ViewGroup container, int position, Object object) {
+    public void destroyItem(View container, int position, Object object) {
         ((ViewPager)container).removeView(datas.get(position));
     }
 
     @Override
-    public Object instantiateItem(ViewGroup container, int position) {
+    public Object instantiateItem(View container, int position) {
         ((ViewPager) container).addView(datas.get(position), 0);
         return datas.get(position);
     }

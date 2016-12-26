@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.mph.basedroid.entity.HomeActivity;
 import com.mph.library.base.BaseActivity;
 
 import butterknife.BindView;
@@ -16,6 +17,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     Button postBtn;
     @BindView(R.id.loadImg)
     Button loadImg;
+    @BindView(R.id.viewpager)
+    Button viewpager;
+    @BindView(R.id.home)
+    Button home;
 
     @Override
     public void initData(Bundle savedInstanceState) {
@@ -26,6 +31,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     public void setListener() {
         postBtn.setOnClickListener(this);
         loadImg.setOnClickListener(this);
+        viewpager.setOnClickListener(this);
+        home.setOnClickListener(this);
     }
 
     @Override
@@ -44,7 +51,14 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 Intent intent2 = new Intent(MainActivity.this, ImgActivity.class);
                 startActivity(intent2);
                 break;
+            case R.id.viewpager:
+                Intent intent3 = new Intent(MainActivity.this, WelcomeActivity.class);
+                startActivity(intent3);
+                break;
+            case R.id.activity_home:
+                Intent intent4 = new Intent(MainActivity.this, HomeActivity.class);
+                startActivity(intent4);
+                break;
         }
     }
-
 }

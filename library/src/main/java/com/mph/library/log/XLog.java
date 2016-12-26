@@ -9,7 +9,7 @@ import com.mph.library.BaseDroidConfig;
  * Created by：hcs on 2016/12/23 10:12
  * e_mail：aaron1539@163.com
  */
-public class XLog {
+public class xLog {
     public static boolean LOG = BaseDroidConfig.LOG;
     public static String TAG_ROOT = BaseDroidConfig.LOG_TAG;
 

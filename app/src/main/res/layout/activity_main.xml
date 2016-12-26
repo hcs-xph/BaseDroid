@@ -18,7 +18,20 @@
         android:id="@+id/loadImg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="加载图片"
+        android:text="加载图片(Glide)"
+        />
+    <Button
+    android:id="@+id/viewpager"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="测试BasePagerAdapter"
+    />
+
+    <Button
+        android:id="@+id/home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="测试BaseFragment"
         />
 
 
