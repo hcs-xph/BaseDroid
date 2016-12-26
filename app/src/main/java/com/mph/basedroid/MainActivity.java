@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.mph.basedroid.entity.HomeActivity;
 import com.mph.library.base.BaseActivity;
 
 import butterknife.BindView;
@@ -55,7 +54,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 Intent intent3 = new Intent(MainActivity.this, WelcomeActivity.class);
                 startActivity(intent3);
                 break;
-            case R.id.activity_home:
+            case R.id.home:
                 Intent intent4 = new Intent(MainActivity.this, HomeActivity.class);
                 startActivity(intent4);
                 break;
