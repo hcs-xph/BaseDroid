@@ -23,7 +23,7 @@ public abstract class SimpleListAdapter<T,H> extends BaseListAdapter<T> {
     public View getView(int position, View convertView, ViewGroup parent) {
         View ret = null;
         if(convertView == null){
-            convertView = LayoutInflater.from(context).inflate(getLayoutId(),parent,false);
+            ret = LayoutInflater.from(context).inflate(getLayoutId(),parent,false);
         }else{
             ret = convertView;
         }
@@ -31,7 +31,7 @@ public abstract class SimpleListAdapter<T,H> extends BaseListAdapter<T> {
         H holder = (H) ret.getTag();
 
         if(holder == null){
-            holder = newViewHolder(convertView);
+            holder = newViewHolder(ret);
             ret.setTag(holder);
         }
 
