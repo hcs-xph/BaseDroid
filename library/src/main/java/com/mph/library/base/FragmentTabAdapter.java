@@ -10,6 +10,7 @@ import com.mph.library.R;
 import java.util.List;
 
 /**
+ * Tab切换Fragment适配器
  * Created by：hcs on 2016/12/28 09:21
  * e_mail：aaron1539@163.com
  */

@@ -28,8 +28,8 @@ public class Home2Activity extends BaseFragmentActivity {
 
     @Override
     public void initData(Bundle savedInstanceState) {
-        fragments.add(new CustomTingFragment());
         fragments.add(new DiscoverFragment());
+        fragments.add(new CustomTingFragment());
         fragments.add(new DownloadFragment());
         fragments.add(new PersonalFragment());
 

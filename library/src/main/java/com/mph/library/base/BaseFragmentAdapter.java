@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import java.util.List;
 
 /**
+ * ViewPager中添加Fragment 适配器
  * Created by：hcs on 2016/12/23 15:18
  * e_mail：aaron1539@163.com
  */

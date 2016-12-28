@@ -23,6 +23,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     Button home;
     @BindView(R.id.home2)
     Button home2;
+    @BindView(R.id.recycler)
+    Button recycler;
 
     @Override
     public void initData(Bundle savedInstanceState) {
@@ -36,6 +38,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         viewpager.setOnClickListener(this);
         home.setOnClickListener(this);
         home2.setOnClickListener(this);
+        recycler.setOnClickListener(this);
     }
 
     @Override
@@ -66,6 +69,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 Intent intent5 = new Intent(MainActivity.this, Home2Activity.class);
                 startActivity(intent5);
                 break;
+            case R.id.recycler:
+                Intent intent6 = new Intent(MainActivity.this, RecyclerActivity.class);
+                startActivity(intent6);
+                break;
         }
     }
+
 }
