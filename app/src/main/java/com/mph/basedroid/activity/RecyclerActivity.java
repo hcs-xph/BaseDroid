@@ -1,10 +1,11 @@
-package com.mph.basedroid;
+package com.mph.basedroid.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.mph.basedroid.R;
 import com.mph.basedroid.adapter.TestRecAdapter;
 import com.mph.library.base.BaseActivity;
 import com.mph.library.base.RecyclerItemCallBack;
@@ -15,7 +16,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class RecyclerActivity extends BaseActivity implements View.OnClickListener {
 

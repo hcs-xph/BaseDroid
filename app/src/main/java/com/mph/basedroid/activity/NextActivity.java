@@ -1,9 +1,10 @@
-package com.mph.basedroid;
+package com.mph.basedroid.activity;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.mph.basedroid.R;
 import com.mph.basedroid.adapter.TestRecAdapter;
 import com.mph.basedroid.view.EmptyView;
 import com.mph.basedroid.view.ErrorView;

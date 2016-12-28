@@ -1,10 +1,13 @@
-package com.mph.basedroid;
+package com.mph.basedroid.activity;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.widget.ListView;
 
 import com.google.gson.reflect.TypeToken;
+import com.mph.basedroid.MainActivity;
+import com.mph.basedroid.MyApp;
+import com.mph.basedroid.R;
 import com.mph.basedroid.adapter.CityAdapter;
 import com.mph.basedroid.entity.City;
 import com.mph.library.base.BaseActivity;

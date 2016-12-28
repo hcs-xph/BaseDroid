@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_select"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.mph.basedroid.activity.SelectActivity">
+
+    <Button
+        android:id="@+id/ageselect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="年龄选择器"
+        />
+
+    <Button
+        android:id="@+id/sexselect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="性别选择器"
+        />
+
+    <Button
+        android:id="@+id/timeselect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="时间选择器"
+        />
+
+</LinearLayout>

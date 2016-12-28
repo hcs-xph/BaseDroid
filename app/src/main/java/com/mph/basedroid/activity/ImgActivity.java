@@ -1,8 +1,9 @@
-package com.mph.basedroid;
+package com.mph.basedroid.activity;
 
 import android.os.Bundle;
 import android.widget.ImageView;
 
+import com.mph.basedroid.R;
 import com.mph.library.base.BaseActivity;
 import com.mph.library.imgload.ILFactory;
 import com.mph.library.imgload.ILoader;

@@ -26,8 +26,8 @@ public abstract class BaseActivity extends Activity implements UiCallBack {
             setContentView(getLayoutId());
             unbinder = KnifeKit.bind(this);
         }
-        setListener();
         initData(savedInstanceState);
+        setListener();
         ActivityCollector.addActivity(this);
     }
 

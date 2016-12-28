@@ -1,4 +1,4 @@
-package com.mph.basedroid;
+package com.mph.basedroid.activity;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.widget.FrameLayout;
 import android.widget.RadioGroup;
 
+import com.mph.basedroid.R;
 import com.mph.basedroid.fragment.CustomTingFragment;
 import com.mph.basedroid.fragment.DiscoverFragment;
 import com.mph.basedroid.fragment.DownloadFragment;

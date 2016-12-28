@@ -5,10 +5,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.mph.basedroid.activity.CityActivity;
+import com.mph.basedroid.activity.Home2Activity;
+import com.mph.basedroid.activity.HomeActivity;
+import com.mph.basedroid.activity.ImgActivity;
+import com.mph.basedroid.activity.RecyclerActivity;
+import com.mph.basedroid.activity.WelcomeActivity;
 import com.mph.library.base.BaseActivity;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 
