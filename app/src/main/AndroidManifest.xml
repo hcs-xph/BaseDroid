@@ -25,7 +25,8 @@
         <activity android:name=".activity.Home2Activity" />
         <activity android:name=".activity.RecyclerActivity" />
         <activity android:name=".activity.NextActivity" />
-        <activity android:name=".activity.SelectActivity"></activity>
+        <activity android:name=".activity.SelectActivity" />
+        <activity android:name=".activity.ActionSheetActivity"></activity>
     </application>
 
 </manifest>

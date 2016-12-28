@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.mph.basedroid.activity.ActionSheetActivity;
 import com.mph.basedroid.activity.CityActivity;
 import com.mph.basedroid.activity.Home2Activity;
 import com.mph.basedroid.activity.HomeActivity;
@@ -34,6 +35,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     Button recycler;
     @BindView(R.id.pickerview)
     Button pickerview;
+    @BindView(R.id.actionsheet)
+    Button actionsheet;
 
     @Override
     public void initData(Bundle savedInstanceState) {
@@ -49,6 +52,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         home2.setOnClickListener(this);
         recycler.setOnClickListener(this);
         pickerview.setOnClickListener(this);
+        actionsheet.setOnClickListener(this);
     }
 
     @Override
@@ -87,13 +91,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 Intent intent7 = new Intent(MainActivity.this, SelectActivity.class);
                 startActivity(intent7);
                 break;
+            case R.id.actionsheet:
+                Intent intent8 = new Intent(MainActivity.this, ActionSheetActivity.class);
+                startActivity(intent8);
+                break;
         }
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
     }
 }

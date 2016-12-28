@@ -52,6 +52,12 @@
         android:layout_height="wrap_content"
         android:text="测试pickerview"
         />
+    <Button
+        android:id="@+id/actionsheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="测试actionsheet"
+        />
 
 
 
