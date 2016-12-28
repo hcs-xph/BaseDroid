@@ -3,8 +3,8 @@ package com.mph.library.net.callback;
 import android.os.Handler;
 import android.os.Looper;
 
+import com.mph.library.log.xLog;
 import com.mph.library.net.response.DownloadResponseHandler;
-import com.mph.library.net.util.LogUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -35,7 +35,7 @@ public class MyDownloadCallback implements Callback {
 
     @Override
     public void onFailure(Call call, final IOException e) {
-        LogUtils.e("onFailure", e);
+        xLog.e("onFailure", e);
 
         mHandler.post(new Runnable() {
             @Override
@@ -91,7 +91,7 @@ public class MyDownloadCallback implements Callback {
                             }
                         });
                     } else {
-                        LogUtils.e("onResponse saveFile fail", e);
+                        xLog.e("onResponse saveFile fail", e);
                         mHandler.post(new Runnable() {
                             @Override
                             public void run() {
@@ -103,7 +103,7 @@ public class MyDownloadCallback implements Callback {
                     }
                 }
             } else {
-                LogUtils.e("onResponse fail status=" + response.code());
+                xLog.e("onResponse fail status=" + response.code());
 
                 mHandler.post(new Runnable() {
                     @Override

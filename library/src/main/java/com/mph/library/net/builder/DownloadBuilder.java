@@ -2,11 +2,11 @@ package com.mph.library.net.builder;
 
 import android.support.annotation.NonNull;
 
+import com.mph.library.log.xLog;
 import com.mph.library.net.MyOkHttp;
 import com.mph.library.net.body.ResponseProgressBody;
 import com.mph.library.net.callback.MyDownloadCallback;
 import com.mph.library.net.response.DownloadResponseHandler;
-import com.mph.library.net.util.LogUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -168,7 +168,7 @@ public class DownloadBuilder {
 
             return call;
         } catch (Exception e) {
-            LogUtils.e("Download enqueue error:" + e.getMessage());
+            xLog.e("Download enqueue error:" + e.getMessage());
             downloadResponseHandler.onFailure(e.getMessage());
             return null;
         }

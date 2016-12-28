@@ -1,9 +1,9 @@
 package com.mph.library.net.callback;
 
 
+import com.mph.library.log.xLog;
 import com.mph.library.net.MyOkHttp;
 import com.mph.library.net.response.IResponseHandler;
-import com.mph.library.net.util.LogUtils;
 
 import java.io.IOException;
 
@@ -24,8 +24,7 @@ public class MyCallback implements Callback {
 
     @Override
     public void onFailure(Call call, final IOException e) {
-        LogUtils.e("onFailure", e);
-
+        xLog.e("onFailure", e);
         MyOkHttp.mHandler.post(new Runnable() {
             @Override
             public void run() {
@@ -39,7 +38,7 @@ public class MyCallback implements Callback {
         if(response.isSuccessful()) {
             mResponseHandler.onSuccess(response);
         } else {
-            LogUtils.e("onResponse fail status=" + response.code());
+            xLog.e("onResponse fail status=" + response.code());
 
             MyOkHttp.mHandler.post(new Runnable() {
                 @Override

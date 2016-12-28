@@ -33,7 +33,12 @@
         android:layout_height="wrap_content"
         android:text="测试BaseFragment"
         />
-
+    <Button
+        android:id="@+id/home2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="测试FragmentTabAdapter"
+        />
 
 
 </LinearLayout>

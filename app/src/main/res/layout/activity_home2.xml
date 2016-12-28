@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_home2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.mph.basedroid.Home2Activity">
+
+    <FrameLayout
+        android:id="@+id/home2_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+
+    <RadioGroup
+        android:id="@+id/main2_tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="#e7e4e4"
+        android:layout_gravity="bottom|center_horizontal"
+        >
+
+        <RadioButton
+            android:id="@+id/main2_tab_item_discover"
+            android:checked="true"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:button="@null"
+            android:text="发现"
+            android:gravity="center"
+            android:textColor="#f7000c"
+            />
+
+        <RadioButton
+            android:id="@+id/main2_tab_item_custom"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="定制听"
+            android:button="@null"
+            android:gravity="center"
+            android:textColor="#f7000c"
+            />
+
+        <RadioButton
+            android:id="@+id/main2_tab_item_download"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="下载听"
+            android:button="@null"
+            android:gravity="center"
+            android:textColor="#f7000c"
+            />
+
+        <RadioButton
+            android:id="@+id/main2_tab_item_personal"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="我"
+            android:button="@null"
+            android:gravity="center"
+            android:textColor="#f7000c"
+            />
+    </RadioGroup>
+
+</LinearLayout>

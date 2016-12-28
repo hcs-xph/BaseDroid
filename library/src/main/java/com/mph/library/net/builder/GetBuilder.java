@@ -1,9 +1,9 @@
 package com.mph.library.net.builder;
 
+import com.mph.library.log.xLog;
 import com.mph.library.net.MyOkHttp;
 import com.mph.library.net.callback.MyCallback;
 import com.mph.library.net.response.IResponseHandler;
-import com.mph.library.net.util.LogUtils;
 
 import java.util.Map;
 
@@ -43,7 +43,7 @@ public class GetBuilder extends OkHttpRequestBuilderHasParam<GetBuilder> {
                     newCall(request).
                     enqueue(new MyCallback(responseHandler));
         } catch (Exception e) {
-            LogUtils.e("Get enqueue error:" + e.getMessage());
+            xLog.e("Get enqueue error:" + e.getMessage());
             responseHandler.onFailure(0, e.getMessage());
         }
     }

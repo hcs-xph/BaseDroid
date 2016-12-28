@@ -21,7 +21,8 @@
         <activity android:name=".CityActivity" />
         <activity android:name=".ImgActivity" />
         <activity android:name=".WelcomeActivity" />
-        <activity android:name=".HomeActivity"></activity>
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".Home2Activity"></activity>
     </application>
 
 </manifest>

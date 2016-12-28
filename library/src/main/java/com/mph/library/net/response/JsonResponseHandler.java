@@ -1,8 +1,8 @@
 package com.mph.library.net.response;
 
 
+import com.mph.library.log.xLog;
 import com.mph.library.net.MyOkHttp;
-import com.mph.library.net.util.LogUtils;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -29,7 +29,7 @@ public abstract class JsonResponseHandler implements IResponseHandler {
             responseBodyStr = responseBody.string();
         } catch (IOException e) {
             e.printStackTrace();
-            LogUtils.e("onResponse fail read response body");
+            xLog.e("onResponse fail read response body");
 
             MyOkHttp.mHandler.post(new Runnable() {
                 @Override
@@ -61,7 +61,7 @@ public abstract class JsonResponseHandler implements IResponseHandler {
                     }
                 });
             } else {
-                LogUtils.e("onResponse fail parse jsonobject, body=" + finalResponseBodyStr);
+                xLog.e("onResponse fail parse jsonobject, body=" + finalResponseBodyStr);
                 MyOkHttp.mHandler.post(new Runnable() {
                     @Override
                     public void run() {
@@ -71,7 +71,7 @@ public abstract class JsonResponseHandler implements IResponseHandler {
             }
         } catch (JSONException e) {
             e.printStackTrace();
-            LogUtils.e("onResponse fail parse jsonobject, body=" + finalResponseBodyStr);
+            xLog.e("onResponse fail parse jsonobject, body=" + finalResponseBodyStr);
             MyOkHttp.mHandler.post(new Runnable() {
                 @Override
                 public void run() {
@@ -82,11 +82,11 @@ public abstract class JsonResponseHandler implements IResponseHandler {
     }
 
     public void onSuccess(int statusCode, JSONObject response) {
-        LogUtils.w("onSuccess(int statusCode, JSONObject response) was not overriden, but callback was received");
+        xLog.d("onSuccess(int statusCode, JSONObject response) was not overriden, but callback was received");
     }
 
     public void onSuccess(int statusCode, JSONArray response) {
-        LogUtils.w("onSuccess(int statusCode, JSONArray response) was not overriden, but callback was received");
+        xLog.d("onSuccess(int statusCode, JSONArray response) was not overriden, but callback was received");
     }
 
     @Override

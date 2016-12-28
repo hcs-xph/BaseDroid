@@ -2,8 +2,8 @@ package com.mph.library.net.response;
 
 import com.google.gson.Gson;
 import com.google.gson.internal.$Gson$Types;
+import com.mph.library.log.xLog;
 import com.mph.library.net.MyOkHttp;
-import com.mph.library.net.util.LogUtils;
 
 import java.io.IOException;
 import java.lang.reflect.ParameterizedType;
@@ -42,7 +42,7 @@ public abstract class GsonResponseHandler<T> implements IResponseHandler {
             responseBodyStr = responseBody.string();
         } catch (IOException e) {
             e.printStackTrace();
-            LogUtils.e("onResponse fail read response body");
+            xLog.e("onResponse fail read response body");
             MyOkHttp.mHandler.post(new Runnable() {
                 @Override
                 public void run() {
@@ -66,7 +66,7 @@ public abstract class GsonResponseHandler<T> implements IResponseHandler {
             });
         } catch (Exception e) {
             e.printStackTrace();
-            LogUtils.e("onResponse fail parse gson, body=" + finalResponseBodyStr);
+            xLog.e("onResponse fail parse gson, body=" + finalResponseBodyStr);
             MyOkHttp.mHandler.post(new Runnable() {
                 @Override
                 public void run() {

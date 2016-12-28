@@ -8,6 +8,7 @@ import android.widget.Button;
 import com.mph.library.base.BaseActivity;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 
@@ -20,6 +21,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     Button viewpager;
     @BindView(R.id.home)
     Button home;
+    @BindView(R.id.home2)
+    Button home2;
 
     @Override
     public void initData(Bundle savedInstanceState) {
@@ -32,6 +35,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         loadImg.setOnClickListener(this);
         viewpager.setOnClickListener(this);
         home.setOnClickListener(this);
+        home2.setOnClickListener(this);
     }
 
     @Override
@@ -57,6 +61,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             case R.id.home:
                 Intent intent4 = new Intent(MainActivity.this, HomeActivity.class);
                 startActivity(intent4);
+                break;
+            case R.id.home2:
+                Intent intent5 = new Intent(MainActivity.this, Home2Activity.class);
+                startActivity(intent5);
                 break;
         }
     }

@@ -1,8 +1,8 @@
 package com.mph.library.net.response;
 
 
+import com.mph.library.log.xLog;
 import com.mph.library.net.MyOkHttp;
-import com.mph.library.net.util.LogUtils;
 
 import java.io.IOException;
 
@@ -24,7 +24,7 @@ public abstract class RawResponseHandler implements IResponseHandler {
             responseBodyStr = responseBody.string();
         } catch (IOException e) {
             e.printStackTrace();
-            LogUtils.e("onResponse fail read response body");
+            xLog.e("onResponse fail read response body");
             MyOkHttp.mHandler.post(new Runnable() {
                 @Override
                 public void run() {
