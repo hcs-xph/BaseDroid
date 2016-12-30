@@ -7,6 +7,7 @@ import android.widget.Button;
 
 import com.mph.basedroid.activity.ActionSheetActivity;
 import com.mph.basedroid.activity.CityActivity;
+import com.mph.basedroid.activity.DownloadFileActivity;
 import com.mph.basedroid.activity.Home2Activity;
 import com.mph.basedroid.activity.HomeActivity;
 import com.mph.basedroid.activity.ImgActivity;
@@ -37,6 +38,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     Button pickerview;
     @BindView(R.id.actionsheet)
     Button actionsheet;
+    @BindView(R.id.downloadfile)
+    Button downloadfile;
 
     @Override
     public void initData(Bundle savedInstanceState) {
@@ -53,6 +56,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         recycler.setOnClickListener(this);
         pickerview.setOnClickListener(this);
         actionsheet.setOnClickListener(this);
+        downloadfile.setOnClickListener(this);
     }
 
     @Override
@@ -94,6 +98,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             case R.id.actionsheet:
                 Intent intent8 = new Intent(MainActivity.this, ActionSheetActivity.class);
                 startActivity(intent8);
+                break;
+            case R.id.downloadfile:
+                Intent intent9 = new Intent(MainActivity.this, DownloadFileActivity.class);
+                startActivity(intent9);
                 break;
         }
     }
