@@ -537,7 +537,6 @@ public class Kits {
          * @param filePath
          * @param stream
          * @return
-         * @see {@link #writeFile(String, InputStream, boolean)}
          */
         public static boolean writeFile(String filePath, InputStream stream) {
             return writeFile(filePath, stream, false);
@@ -561,7 +560,6 @@ public class Kits {
          * @param file
          * @param stream
          * @return
-         * @see {@link #writeFile(java.io.File, InputStream, boolean)}
          */
         public static boolean writeFile(java.io.File file, InputStream stream) {
             return writeFile(file, stream, false);
@@ -675,26 +673,9 @@ public class Kits {
         }
 
         /**
-         * get file name with path, not include suffix
-         * <p/>
-         * <pre>
-         *      getFileNameWithoutExtension(null)               =   null
-         *      getFileNameWithoutExtension("")                 =   ""
-         *      getFileNameWithoutExtension("   ")              =   "   "
-         *      getFileNameWithoutExtension("abc")              =   "abc"
-         *      getFileNameWithoutExtension("a.mp3")            =   "a"
-         *      getFileNameWithoutExtension("a.b.rmvb")         =   "a.b"
-         *      getFileNameWithoutExtension("c:\\")              =   ""
-         *      getFileNameWithoutExtension("c:\\a")             =   "a"
-         *      getFileNameWithoutExtension("c:\\a.b")           =   "a"
-         *      getFileNameWithoutExtension("c:a.txt\\a")        =   "a"
-         *      getFileNameWithoutExtension("/home/admin")      =   "admin"
-         *      getFileNameWithoutExtension("/home/admin/a.txt/b.mp3")  =   "b"
-         * </pre>
          *
          * @param filePath
-         * @return file name with path, not include suffix
-         * @see
+         * @return
          */
         public static String getFileNameWithoutExtension(String filePath) {
             if (TextUtils.isEmpty(filePath)) {
@@ -713,25 +694,9 @@ public class Kits {
         }
 
         /**
-         * get file name with path, include suffix
-         * <p/>
-         * <pre>
-         *      getFileName(null)               =   null
-         *      getFileName("")                 =   ""
-         *      getFileName("   ")              =   "   "
-         *      getFileName("a.mp3")            =   "a.mp3"
-         *      getFileName("a.b.rmvb")         =   "a.b.rmvb"
-         *      getFileName("abc")              =   "abc"
-         *      getFileName("c:\\")              =   ""
-         *      getFileName("c:\\a")             =   "a"
-         *      getFileName("c:\\a.b")           =   "a.b"
-         *      getFileName("c:a.txt\\a")        =   "a"
-         *      getFileName("/home/admin")      =   "admin"
-         *      getFileName("/home/admin/a.txt/b.mp3")  =   "b.mp3"
-         * </pre>
          *
          * @param filePath
-         * @return file name with path, include suffix
+         * @return
          */
         public static String getFileName(String filePath) {
             if (TextUtils.isEmpty(filePath)) {
@@ -743,23 +708,6 @@ public class Kits {
         }
 
         /**
-         * get folder name with path
-         * <p/>
-         * <pre>
-         *      getFolderName(null)               =   null
-         *      getFolderName("")                 =   ""
-         *      getFolderName("   ")              =   ""
-         *      getFolderName("a.mp3")            =   ""
-         *      getFolderName("a.b.rmvb")         =   ""
-         *      getFolderName("abc")              =   ""
-         *      getFolderName("c:\\")              =   "c:"
-         *      getFolderName("c:\\a")             =   "c:"
-         *      getFolderName("c:\\a.b")           =   "c:"
-         *      getFolderName("c:a.txt\\a")        =   "c:a.txt"
-         *      getFolderName("c:a\\b\\c\\d.txt")    =   "c:a\\b\\c"
-         *      getFolderName("/home/admin")      =   "/home"
-         *      getFolderName("/home/admin/a.txt/b.mp3")  =   "/home/admin/a.txt"
-         * </pre>
          *
          * @param filePath
          * @return
@@ -775,23 +723,6 @@ public class Kits {
         }
 
         /**
-         * get suffix of file with path
-         * <p/>
-         * <pre>
-         *      getFileExtension(null)               =   ""
-         *      getFileExtension("")                 =   ""
-         *      getFileExtension("   ")              =   "   "
-         *      getFileExtension("a.mp3")            =   "mp3"
-         *      getFileExtension("a.b.rmvb")         =   "rmvb"
-         *      getFileExtension("abc")              =   ""
-         *      getFileExtension("c:\\")              =   ""
-         *      getFileExtension("c:\\a")             =   ""
-         *      getFileExtension("c:\\a.b")           =   "b"
-         *      getFileExtension("c:a.txt\\a")        =   ""
-         *      getFileExtension("/home/admin")      =   ""
-         *      getFileExtension("/home/admin/a.txt/b")  =   ""
-         *      getFileExtension("/home/admin/a.txt/b.mp3")  =   "mp3"
-         * </pre>
          *
          * @param filePath
          * @return
@@ -810,22 +741,9 @@ public class Kits {
         }
 
         /**
-         * Creates the directory named by the trailing filename of this file, including the complete directory path required
-         * to create this directory. <br/>
-         * <br/>
-         * <ul>
-         * <strong>Attentions:</strong>
-         * <li>makeDirs("C:\\Users\\Trinea") can only create users folder</li>
-         * <li>makeFolder("C:\\Users\\Trinea\\") can create Trinea folder</li>
-         * </ul>
          *
          * @param filePath
-         * @return true if the necessary directories have been created or the target directory already exists, false one of
-         * the directories can not be created.
-         * <ul>
-         * <li>if {@link File#getFolderName(String)} return null, return false</li>
-         * <li>if target directory already exists, return true</li>
-         * </ul>
+         * @return
          */
         public static boolean makeDirs(String filePath) {
             String folderName = getFolderName(filePath);
@@ -840,7 +758,6 @@ public class Kits {
         /**
          * @param filePath
          * @return
-         * @see #makeDirs(String)
          */
         public static boolean makeFolders(String filePath) {
             return makeDirs(filePath);
@@ -877,12 +794,6 @@ public class Kits {
         }
 
         /**
-         * delete file or directory
-         * <ul>
-         * <li>if path is null or empty, return true</li>
-         * <li>if path not exist, return true</li>
-         * <li>if path exist, delete recursion. return true</li>
-         * <ul>
          *
          * @param path
          * @return
@@ -913,14 +824,9 @@ public class Kits {
         }
 
         /**
-         * get file size
-         * <ul>
-         * <li>if path is null or empty, return -1</li>
-         * <li>if path exist and it is a file, return file size, else return -1</li>
-         * <ul>
          *
          * @param path
-         * @return returns the length of this file in bytes. returns -1 if the file does not exist.
+         * @return
          */
         public static long getFileSize(String path) {
             if (TextUtils.isEmpty(path)) {

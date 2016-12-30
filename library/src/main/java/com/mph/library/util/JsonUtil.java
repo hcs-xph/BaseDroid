@@ -30,7 +30,7 @@ public class JsonUtil implements Serializable {
 	/**
 	 * 反序列化
 	 * 
-	 * @param clazz
+	 * @param typeToken
 	 *            目标类型
 	 * @param json
 	 *            json字符串

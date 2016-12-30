@@ -13,7 +13,7 @@ import java.io.File;
  */
 public interface ILoader {
     /**
-     * 图片加载框架初始化，通常在APP->onCreate方法中调用
+     * 图片加载框架初始化，通常在APP-onCreate方法中调用
      * @param context
      */
     void init(Context context);
