@@ -1,14 +1,28 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.mph.library.view.EmptyContentLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/emptyLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#f7e3e3"
     tools:context="com.mph.basedroid.fragment.DownloadFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.mph.library.view.refreshlayout.TwinklingRefreshLayout
+        android:id="@+id/refreshView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="download" />
+        >
 
-</FrameLayout>
+        <ListView
+            android:id="@+id/listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:divider="#FAFBFF"
+            android:dividerHeight="2dp"
+            android:overScrollMode="never"
+            />
+
+    </com.mph.library.view.refreshlayout.TwinklingRefreshLayout>
+
+
+</com.mph.library.view.EmptyContentLayout>

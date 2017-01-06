@@ -46,8 +46,8 @@ public abstract class BaseFragment extends Fragment implements UiCallBack{
         if(useEventBus()){
             BusFactory.getBus().register(this);
         }
-        setListener();
         initData(savedInstanceState);
+        setListener();
     }
 
     @Override
@@ -73,5 +73,10 @@ public abstract class BaseFragment extends Fragment implements UiCallBack{
     public void onDestroyView() {
         super.onDestroyView();
         BusFactory.getBus().unregister(this);
+    }
+
+    @Override
+    public void setListener() {
+
     }
 }

@@ -27,8 +27,8 @@ public abstract class BaseFragmentActivity extends FragmentActivity implements U
             setContentView(getLayoutId());
             unbinder = KnifeKit.bind(this);
         }
-        setListener();
         initData(savedInstanceState);
+        setListener();
         ActivityCollector.addActivity(this);
     }
 
@@ -49,5 +49,10 @@ public abstract class BaseFragmentActivity extends FragmentActivity implements U
     @Override
     public boolean useEventBus() {
         return false;
+    }
+
+    @Override
+    public void setListener() {
+
     }
 }

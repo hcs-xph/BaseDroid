@@ -2,6 +2,8 @@ package com.mph.basedroid.activity;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.google.gson.reflect.TypeToken;
@@ -27,7 +29,7 @@ import java.util.Map;
 
 import butterknife.BindView;
 
-public class CityActivity extends BaseActivity {
+public class CityActivity extends CityBaseActivity {
 
     @BindView(R.id.listview)
     ListView listview;
@@ -37,24 +39,20 @@ public class CityActivity extends BaseActivity {
     private MyOkHttp okHttp;
     private CityAdapter adapter;
 
+
     @Override
     public void initData(Bundle savedInstanceState) {
         okHttp = MyApp.getInstance().getOkHttp();
-        emptyLayout.emptyView(LayoutInflater.from(this).inflate(R.layout.view_empty,null));
-        emptyLayout.loadingView(LayoutInflater.from(this).inflate(R.layout.view_loading,null));
-        emptyLayout.errorView(LayoutInflater.from(this).inflate(R.layout.view_error,null));
-
+        initEmptyView(emptyLayout);
         adapter = new CityAdapter(this);
         listview.setAdapter(adapter);
         adapter.notifyDataSetChanged();
-
         emptyLayout.showLoading();
         post();
     }
 
     @Override
     public void setListener() {
-
     }
 
     @Override
@@ -97,5 +95,10 @@ public class CityActivity extends BaseActivity {
                     }
                 });
 
+    }
+
+    @Override
+    public void errorRefresh() {
+        post();
     }
 }

@@ -11,13 +11,11 @@ import com.mph.basedroid.activity.DownloadFileActivity;
 import com.mph.basedroid.activity.Home2Activity;
 import com.mph.basedroid.activity.HomeActivity;
 import com.mph.basedroid.activity.ImgActivity;
-import com.mph.basedroid.activity.RecyclerActivity;
 import com.mph.basedroid.activity.SelectActivity;
 import com.mph.basedroid.activity.WelcomeActivity;
 import com.mph.library.base.BaseActivity;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 
@@ -32,8 +30,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     Button home;
     @BindView(R.id.home2)
     Button home2;
-    @BindView(R.id.recycler)
-    Button recycler;
     @BindView(R.id.pickerview)
     Button pickerview;
     @BindView(R.id.actionsheet)
@@ -53,7 +49,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         viewpager.setOnClickListener(this);
         home.setOnClickListener(this);
         home2.setOnClickListener(this);
-        recycler.setOnClickListener(this);
         pickerview.setOnClickListener(this);
         actionsheet.setOnClickListener(this);
         downloadfile.setOnClickListener(this);
@@ -86,10 +81,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             case R.id.home2:
                 Intent intent5 = new Intent(MainActivity.this, Home2Activity.class);
                 startActivity(intent5);
-                break;
-            case R.id.recycler:
-                Intent intent6 = new Intent(MainActivity.this, RecyclerActivity.class);
-                startActivity(intent6);
                 break;
             case R.id.pickerview:
                 Intent intent7 = new Intent(MainActivity.this, SelectActivity.class);

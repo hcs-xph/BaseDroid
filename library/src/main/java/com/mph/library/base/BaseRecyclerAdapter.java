@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
+ * RecyclerAdapter适配器基类
  * Created by：hcs on 2016/12/23 14:33
  * e_mail：aaron1539@163.com
  */

@@ -8,24 +8,6 @@
         <attr name="em_errorLayoutId" format="reference" />
     </declare-styleable>
 
-    <declare-styleable name="XRecyclerContentLayout">
-        <attr name="recyclerClipToPadding" format="boolean" />
-        <attr name="recyclerPadding" format="dimension" />
-        <attr name="recyclerPaddingTop" format="dimension" />
-        <attr name="recyclerPaddingBottom" format="dimension" />
-        <attr name="recyclerPaddingLeft" format="dimension" />
-        <attr name="recyclerPaddingRight" format="dimension" />
-        <attr name="recyclerScrollbarNone" format="boolean" />
-        <attr name="recyclerBackgroundColor" format="color" />
-
-        <attr name="recyclerScrollbarStyle">
-            <flag name="insideOverlay" value="0x00000000" />
-            <flag name="insideInset" value="0x01000000" />
-            <flag name="outsideOverlay" value="0x02000000" />
-            <flag name="outsideInset" value="0x03000000" />
-        </attr>
-    </declare-styleable>
-
     <declare-styleable name="wheelview">
         <attr name="gravity">
             <enum name="center" value="17"/>
@@ -38,4 +20,18 @@
         <attr name="dividerColor" format="color"/>
     </declare-styleable>
 
+
+    <declare-styleable name="TwinklingRefreshLayout">
+        <attr name="tr_wave_height" format="dimension"/>
+        <attr name="tr_head_height" format="dimension"/>
+        <attr name="tr_bottom_height" format="dimension"/>
+        <attr name="tr_overscroll_height" format="dimension"/>
+        <attr name="tr_enable_loadmore" format="boolean"/>
+        <attr name="tr_pureScrollMode_on" format="boolean"/>
+        <attr name="tr_overscroll_top_show" format="boolean"/>
+        <attr name="tr_overscroll_bottom_show" format="boolean"/>
+        <attr name="tr_enable_overscroll" format="boolean"/>
+        <attr name="tr_headerView" format="dimension"/>
+        <attr name="tr_bottomView" format="dimension"/>
+    </declare-styleable>
 </resources>

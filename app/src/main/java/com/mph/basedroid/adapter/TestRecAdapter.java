@@ -8,7 +8,6 @@ import android.widget.TextView;
 
 import com.mph.basedroid.R;
 import com.mph.library.base.SimpleRecAdapter;
-import com.mph.library.view.xrecyclerview.RecyclerAdapter;
 
 /**
  * Created by：hcs on 2016/12/28 10:57

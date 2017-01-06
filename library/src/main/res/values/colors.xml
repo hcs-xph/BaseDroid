@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="x_red">#FFC93437</color>
-    <color name="x_blue">#FF375BF1</color>
-    <color name="x_yellow">#FFF7D23E</color>
-    <color name="x_green">#FF34A350</color>
 
     <color name="pickerview_timebtn_nor">#057dff</color>
     <color name="pickerview_timebtn_pre">#c2daf5</color>
@@ -14,4 +10,10 @@
     <color name="pickerview_wheelview_textcolor_divider">#d5d5d5</color>
     <!--覆盖颜色-->
     <color name="bgColor_overlay">#60000000</color>
+
+    <!-- 刷新库颜色 -->
+    <color name="Orange">#e75946</color>
+    <color name="Yellow">#f4d227</color>
+    <color name="Blue">#4674e7</color>
+    <color name="Green">#0ba62c</color>
 </resources>

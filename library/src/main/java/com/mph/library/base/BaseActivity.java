@@ -49,4 +49,9 @@ public abstract class BaseActivity extends Activity implements UiCallBack {
     public boolean useEventBus() {
         return false;
     }
+
+    @Override
+    public void setListener() {
+
+    }
 }
