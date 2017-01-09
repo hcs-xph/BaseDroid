@@ -13,7 +13,7 @@ import okhttp3.Request;
 
 /**
  * post builder
- * Created by tsy on 16/9/18.
+ *
  */
 public class PostBuilder extends OkHttpRequestBuilderHasParam<PostBuilder> {
 

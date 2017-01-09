@@ -8,7 +8,7 @@ import java.util.Map;
 
 /**
  * 带有param的base request body
- * Created by tsy on 2016/12/6.
+ *
  */
 
 public abstract class OkHttpRequestBuilderHasParam<T extends OkHttpRequestBuilderHasParam> extends OkHttpRequestBuilder<T> {

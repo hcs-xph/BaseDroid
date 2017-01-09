@@ -4,7 +4,7 @@ import java.io.File;
 
 /**
  * 下载回调
- * Created by tsy on 16/8/16.
+ *
  */
 public abstract class DownloadResponseHandler {
 

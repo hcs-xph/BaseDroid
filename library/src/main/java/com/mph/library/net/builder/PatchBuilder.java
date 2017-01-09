@@ -12,7 +12,7 @@ import okhttp3.RequestBody;
 
 /**
  * patch builder
- * Created by tsy on 16/12/06.
+ *
  */
 public class PatchBuilder extends OkHttpRequestBuilder<PatchBuilder> {
 

@@ -14,7 +14,7 @@ import okio.Sink;
 
 /**
  * 重写request body 设置上传进度监听
- * Created by tsy on 16/8/16.
+ *
  */
 public class ProgressRequestBody extends RequestBody {
 

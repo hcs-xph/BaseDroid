@@ -1,8 +1,6 @@
 package com.mph.library.net.download_mgr;
 
-/**
- * Created by tsy on 2016/11/25.
- */
+
 
 public class DownloadStatus {
     public static final int STATUS_DEFAULT = -1;        //初始状态

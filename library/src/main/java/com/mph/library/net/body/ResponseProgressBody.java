@@ -14,7 +14,7 @@ import okio.Source;
 
 /**
  * 重写responsebody 设置下载进度监听
- * Created by tsy on 16/8/16.
+ *
  */
 public class ResponseProgressBody extends ResponseBody {
 

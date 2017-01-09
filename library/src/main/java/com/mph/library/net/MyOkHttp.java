@@ -17,7 +17,7 @@ import okhttp3.OkHttpClient;
 
 /**
  * MyOkhttp
- * Created by tsy on 16/9/14.
+ *
  */
 public class MyOkHttp {
     private static OkHttpClient mOkHttpClient;

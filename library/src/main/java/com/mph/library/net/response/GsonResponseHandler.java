@@ -14,7 +14,7 @@ import okhttp3.ResponseBody;
 
 /**
  * Gson类型的回调接口
- * Created by tsy on 16/8/15.
+ *
  */
 public abstract class GsonResponseHandler<T> implements IResponseHandler {
 

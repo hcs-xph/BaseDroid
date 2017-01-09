@@ -2,9 +2,6 @@ package com.mph.library.net.download_mgr;
 
 import java.io.File;
 
-/**
- * Created by tsy on 2016/11/24.
- */
 
 public interface DownloadTaskListener {
     /**

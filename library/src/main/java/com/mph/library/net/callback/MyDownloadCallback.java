@@ -16,9 +16,6 @@ import okhttp3.Callback;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
 
-/**
- * Created by tsy on 16/9/18.
- */
 public class MyDownloadCallback implements Callback {
 
     private DownloadResponseHandler mDownloadResponseHandler;

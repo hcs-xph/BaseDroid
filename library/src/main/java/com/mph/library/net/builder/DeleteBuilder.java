@@ -10,7 +10,7 @@ import okhttp3.Request;
 
 /**
  * delete builder
- * Created by tsy on 2016/12/6.
+ *
  */
 
 public class DeleteBuilder extends OkHttpRequestBuilder<DeleteBuilder> {

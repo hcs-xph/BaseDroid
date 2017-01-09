@@ -11,7 +11,7 @@ import okhttp3.Request;
 
 /**
  * Get Builder
- * Created by tsy on 16/9/18.
+ *
  */
 public class GetBuilder extends OkHttpRequestBuilderHasParam<GetBuilder> {
 

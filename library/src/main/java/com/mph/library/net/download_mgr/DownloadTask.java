@@ -7,9 +7,6 @@ import java.io.File;
 
 import okhttp3.Call;
 
-/**
- * Created by tangsiyuan on 2016/11/23.
- */
 
 public class DownloadTask {
 

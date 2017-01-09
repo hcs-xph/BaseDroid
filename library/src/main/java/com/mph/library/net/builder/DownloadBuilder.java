@@ -21,7 +21,7 @@ import okhttp3.Response;
 
 /**
  * download builder
- * Created by tsy on 16/9/18.
+ *
  */
 public class DownloadBuilder {
 

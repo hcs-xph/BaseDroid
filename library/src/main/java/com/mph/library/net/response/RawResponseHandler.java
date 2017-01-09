@@ -11,7 +11,7 @@ import okhttp3.ResponseBody;
 
 /**
  * raw 字符串结果回调
- * Created by tsy on 16/8/18.
+ *
  */
 public abstract class RawResponseHandler implements IResponseHandler {
 

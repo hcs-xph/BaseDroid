@@ -15,7 +15,7 @@ import java.util.Locale;
 
 /**
  * 下载管理
- * Created by tangsiyuan on 2016/11/23.
+ *
  */
 
 public abstract class AbstractDownloadMgr {

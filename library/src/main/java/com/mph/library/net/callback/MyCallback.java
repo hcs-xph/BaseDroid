@@ -11,9 +11,6 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 
-/**
- * Created by tsy on 16/9/18.
- */
 public class MyCallback implements Callback {
 
     private IResponseHandler mResponseHandler;

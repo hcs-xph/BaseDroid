@@ -12,7 +12,7 @@ import okhttp3.Request;
 
 /**
  * 不带param的base request body
- * Created by tsy on 16/9/14.
+ *
  */
 public abstract class OkHttpRequestBuilder<T extends OkHttpRequestBuilder> {
     protected String mUrl;

@@ -22,7 +22,7 @@ import okhttp3.RequestBody;
 
 /**
  * upload builder
- * Created by tsy on 16/9/18.
+ *
  */
 public class UploadBuilder extends OkHttpRequestBuilderHasParam<UploadBuilder> {
 
