@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import com.mph.library.BaseDroidConfig;
 import com.mph.library.base.UiCallBack;
+import com.mph.library.base.mvp.BasePresenter;
 import com.mph.library.event.BusFactory;
 import com.mph.library.kit.KnifeKit;
 import com.mph.library.util.ActivityCollector;
@@ -16,10 +17,11 @@ import butterknife.Unbinder;
  * Created by：hcs on 2016/12/23 13:43
  * e_mail：aaron1539@163.com
  */
-public abstract class BaseActivity extends Activity implements UiCallBack {
+public abstract class BaseActivity<V,T extends BasePresenter<V>> extends Activity implements UiCallBack {
 
     protected Activity context;
     private Unbinder unbinder;
+    protected T presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,7 @@ public abstract class BaseActivity extends Activity implements UiCallBack {
         if(changeStatusBarColor()){
             StatusBarUtil.setColor(this, BaseDroidConfig.STATUS_BAT_DEFAULT_COLOR);
         }
+        presenter = initPresenter();
         initData(savedInstanceState);
         setListener();
         ActivityCollector.addActivity(this);
@@ -43,12 +46,23 @@ public abstract class BaseActivity extends Activity implements UiCallBack {
         if(useEventBus()){
             BusFactory.getBus().register(this);
         }
+        if(presenter != null){
+            presenter.attach((V)this);
+        }
     }
 
     @Override
     protected void onStop() {
         super.onStop();
         BusFactory.getBus().unregister(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        if(presenter!=null){
+            presenter.detach();
+        }
+        super.onDestroy();
     }
 
     @Override
@@ -67,5 +81,13 @@ public abstract class BaseActivity extends Activity implements UiCallBack {
     @Override
     public void setListener() {
 
+    }
+
+    /**
+     * 初始化presenter
+     * @return
+     */
+    protected T initPresenter(){
+        return null;
     }
 }

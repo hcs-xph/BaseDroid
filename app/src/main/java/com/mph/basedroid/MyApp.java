@@ -2,6 +2,7 @@ package com.mph.basedroid;
 
 import android.app.Application;
 
+import com.mph.library.BaseDroidConfig;
 import com.mph.library.net.MyOkHttp;
 
 /**
@@ -18,6 +19,7 @@ public class MyApp extends Application {
         super.onCreate();
         instance = this;
         okHttp = new MyOkHttp();
+        BaseDroidConfig.STATUS_BAT_DEFAULT_COLOR = 0xff067;
     }
 
     public static synchronized MyApp getInstance() {

@@ -94,6 +94,11 @@ public class CityActivity extends CityBaseActivity {
     }
 
     @Override
+    public boolean changeStatusBarColor() {
+        return true;
+    }
+
+    @Override
     public void errorRefresh() {
         post();
     }

@@ -7,6 +7,7 @@ import android.os.Bundle;
  * e_mail：aaron1539@163.com
  */
 public interface UiCallBack {
+
     /**
      * 初始化数据
      * @param savedInstanceState
