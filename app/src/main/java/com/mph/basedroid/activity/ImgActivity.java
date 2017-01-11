@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.widget.ImageView;
 
 import com.mph.basedroid.R;
-import com.mph.library.base.BaseActivity;
+import com.mph.library.base.activity.BaseActivity;
 import com.mph.library.imgload.ILFactory;
 import com.mph.library.imgload.ILoader;
 

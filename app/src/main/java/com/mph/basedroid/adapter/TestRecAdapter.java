@@ -3,11 +3,10 @@ package com.mph.basedroid.adapter;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.mph.basedroid.R;
-import com.mph.library.base.SimpleRecAdapter;
+import com.mph.library.base.adapter.SimpleRecAdapter;
 
 /**
  * Created by：hcs on 2016/12/28 10:57

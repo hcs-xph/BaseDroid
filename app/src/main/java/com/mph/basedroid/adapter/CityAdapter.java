@@ -6,7 +6,7 @@ import android.widget.TextView;
 
 import com.mph.basedroid.R;
 import com.mph.basedroid.entity.City;
-import com.mph.library.base.SimpleListAdapter;
+import com.mph.library.base.adapter.SimpleListAdapter;
 
 /**
  * Created by：hcs on 2016/12/26 10:36

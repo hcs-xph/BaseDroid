@@ -1,9 +1,6 @@
 package com.mph.basedroid.activity;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.Button;
 import android.widget.ListView;
 
 import com.google.gson.reflect.TypeToken;
@@ -12,7 +9,6 @@ import com.mph.basedroid.MyApp;
 import com.mph.basedroid.R;
 import com.mph.basedroid.adapter.CityAdapter;
 import com.mph.basedroid.entity.City;
-import com.mph.library.base.BaseActivity;
 import com.mph.library.log.xLog;
 import com.mph.library.net.MyOkHttp;
 import com.mph.library.net.response.JsonResponseHandler;

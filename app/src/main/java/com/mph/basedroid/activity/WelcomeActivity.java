@@ -5,8 +5,8 @@ import android.support.v4.view.ViewPager;
 import android.widget.ImageView;
 
 import com.mph.basedroid.R;
-import com.mph.library.base.BaseActivity;
-import com.mph.library.base.BasePagerAdapter;
+import com.mph.library.base.activity.BaseActivity;
+import com.mph.library.base.adapter.BasePagerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

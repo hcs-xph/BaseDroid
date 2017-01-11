@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.widget.FrameLayout;
 import android.widget.RadioGroup;
 
 import com.mph.basedroid.R;
@@ -12,8 +11,7 @@ import com.mph.basedroid.fragment.CustomTingFragment;
 import com.mph.basedroid.fragment.DiscoverFragment;
 import com.mph.basedroid.fragment.DownloadFragment;
 import com.mph.basedroid.fragment.PersonalFragment;
-import com.mph.library.base.BaseActivity;
-import com.mph.library.base.BaseFragmentActivity;
+import com.mph.library.base.activity.BaseFragmentActivity;
 
 import butterknife.BindView;
 

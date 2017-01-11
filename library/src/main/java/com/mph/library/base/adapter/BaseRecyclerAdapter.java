@@ -1,8 +1,10 @@
-package com.mph.library.base;
+package com.mph.library.base.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
+
+import com.mph.library.base.RecyclerItemCallBack;
 
 import java.util.ArrayList;
 import java.util.Arrays;

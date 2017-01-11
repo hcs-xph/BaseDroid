@@ -1,12 +1,15 @@
-package com.mph.library.base;
+package com.mph.library.base.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 
+import com.mph.library.BaseDroidConfig;
+import com.mph.library.base.UiCallBack;
 import com.mph.library.event.BusFactory;
 import com.mph.library.kit.KnifeKit;
 import com.mph.library.util.ActivityCollector;
+import com.mph.library.util.StatusBarUtil;
 
 import butterknife.Unbinder;
 
@@ -26,6 +29,9 @@ public abstract class BaseFragmentActivity extends FragmentActivity implements U
         if(getLayoutId()>0){
             setContentView(getLayoutId());
             unbinder = KnifeKit.bind(this);
+        }
+        if(changeStatusBarColor()){
+            StatusBarUtil.setColor(this, BaseDroidConfig.STATUS_BAT_DEFAULT_COLOR);
         }
         initData(savedInstanceState);
         setListener();
@@ -48,6 +54,14 @@ public abstract class BaseFragmentActivity extends FragmentActivity implements U
 
     @Override
     public boolean useEventBus() {
+        return false;
+    }
+
+    /**
+     * 是否使用沉浸式状态栏
+     * @return
+     */
+    public boolean changeStatusBarColor(){
         return false;
     }
 

@@ -5,12 +5,11 @@ import android.view.View;
 import android.widget.Button;
 
 import com.mph.basedroid.R;
-import com.mph.library.base.BaseFragmentActivity;
+import com.mph.library.base.activity.BaseFragmentActivity;
 import com.mph.library.log.xLog;
 import com.mph.library.view.ActionSheet;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class ActionSheetActivity extends BaseFragmentActivity implements ActionSheet.ActionSheetListener, View.OnClickListener {
 

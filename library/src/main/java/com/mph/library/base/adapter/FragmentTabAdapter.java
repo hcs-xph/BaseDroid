@@ -1,4 +1,4 @@
-package com.mph.library.base;
+package com.mph.library.base.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;

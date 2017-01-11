@@ -1,12 +1,11 @@
 package com.mph.basedroid.activity;
 
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 
 import com.mph.basedroid.R;
-import com.mph.library.base.BaseActivity;
+import com.mph.library.base.activity.BaseActivity;
 import com.mph.library.view.EmptyContentLayout;
 
 /**

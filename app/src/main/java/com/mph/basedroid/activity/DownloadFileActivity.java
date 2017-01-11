@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.mph.basedroid.MyApp;
 import com.mph.basedroid.R;
-import com.mph.library.base.BaseActivity;
+import com.mph.library.base.activity.BaseActivity;
 import com.mph.library.log.xLog;
 import com.mph.library.net.MyOkHttp;
 import com.mph.library.net.response.DownloadResponseHandler;
@@ -17,7 +17,6 @@ import com.mph.library.net.response.DownloadResponseHandler;
 import java.io.File;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class DownloadFileActivity extends BaseActivity implements View.OnClickListener {
 

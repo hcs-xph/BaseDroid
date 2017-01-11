@@ -13,7 +13,7 @@ import com.mph.basedroid.activity.HomeActivity;
 import com.mph.basedroid.activity.ImgActivity;
 import com.mph.basedroid.activity.SelectActivity;
 import com.mph.basedroid.activity.WelcomeActivity;
-import com.mph.library.base.BaseActivity;
+import com.mph.library.base.activity.BaseActivity;
 
 import butterknife.BindView;
 

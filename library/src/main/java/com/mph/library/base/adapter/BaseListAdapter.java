@@ -1,4 +1,4 @@
-package com.mph.library.base;
+package com.mph.library.base.adapter;
 
 import android.view.View;
 import android.view.ViewGroup;

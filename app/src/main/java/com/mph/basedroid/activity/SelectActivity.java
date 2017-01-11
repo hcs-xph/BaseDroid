@@ -7,7 +7,7 @@ import android.widget.Button;
 import com.mph.basedroid.R;
 import com.mph.basedroid.view.AgeSelectView;
 import com.mph.basedroid.view.SexSelectView;
-import com.mph.library.base.BaseActivity;
+import com.mph.library.base.activity.BaseActivity;
 import com.mph.library.log.xLog;
 import com.mph.library.view.pickerview.TimePickerView;
 
@@ -15,7 +15,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class SelectActivity extends BaseActivity implements View.OnClickListener, AgeSelectView.OnAgeListener, SexSelectView.OnSexListener, TimePickerView.OnTimeSelectListener {
 

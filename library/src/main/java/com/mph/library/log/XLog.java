@@ -69,4 +69,10 @@ public class xLog {
     public static void e(String tag, String msg, Object... args) {
         msg(Log.ERROR, tag, msg, args);
     }
+
+    public static void d(String tag,String str){
+        if(LOG){
+            Log.d(tag,str);
+        }
+    }
 }

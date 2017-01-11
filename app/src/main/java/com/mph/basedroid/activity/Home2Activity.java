@@ -9,15 +9,14 @@ import com.mph.basedroid.fragment.CustomTingFragment;
 import com.mph.basedroid.fragment.DiscoverFragment;
 import com.mph.basedroid.fragment.DownloadFragment;
 import com.mph.basedroid.fragment.PersonalFragment;
-import com.mph.library.base.BaseFragmentActivity;
-import com.mph.library.base.FragmentTabAdapter;
+import com.mph.library.base.activity.BaseFragmentActivity;
+import com.mph.library.base.adapter.FragmentTabAdapter;
 import com.mph.library.log.xLog;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class Home2Activity extends BaseFragmentActivity {
 
