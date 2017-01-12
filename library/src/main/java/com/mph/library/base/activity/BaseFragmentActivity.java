@@ -36,6 +36,9 @@ public abstract class BaseFragmentActivity<V,T extends BasePresenter<V>> extends
             StatusBarUtil.setColor(this, BaseDroidConfig.STATUS_BAT_DEFAULT_COLOR);
         }
         presenter = initPresenter();
+        if(presenter != null){
+            presenter.attach((V)this);
+        }
         initData(savedInstanceState);
         setListener();
         ActivityCollector.addActivity(this);
@@ -47,9 +50,7 @@ public abstract class BaseFragmentActivity<V,T extends BasePresenter<V>> extends
         if(useEventBus()){
             BusFactory.getBus().register(this);
         }
-        if(presenter != null){
-            presenter.attach((V)this);
-        }
+
     }
 
     @Override

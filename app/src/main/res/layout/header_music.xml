@@ -4,7 +4,7 @@
     android:background="#F05448"
     android:layout_height="wrap_content">
 
-    <com.mph.basedroid.view.CircleImageView
+    <com.mph.basedroid.widget.CircleImageView
         android:id="@+id/avatar"
         android:layout_width="50dp"
         android:layout_height="50dp"

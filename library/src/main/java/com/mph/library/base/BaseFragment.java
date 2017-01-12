@@ -57,11 +57,12 @@ public abstract class BaseFragment<V, T extends BasePresenter<V>> extends Fragme
             BusFactory.getBus().register(this);
         }
         presenter = initPresenter();
-        initData(savedInstanceState);
-        setListener();
         if(presenter!=null){
             presenter.attach((V)this);
         }
+        initData(savedInstanceState);
+        setListener();
+
     }
 
 

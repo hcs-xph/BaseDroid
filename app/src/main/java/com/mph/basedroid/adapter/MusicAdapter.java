@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import com.mph.basedroid.R;
 import com.mph.basedroid.entity.Card;
-import com.mph.basedroid.view.CircleImageView;
+import com.mph.basedroid.widget.CircleImageView;
 
 import java.util.ArrayList;
 import java.util.List;

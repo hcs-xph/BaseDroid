@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.mph.basedroid.activity.ActionSheetActivity;
+import com.mph.basedroid.activity.City2Activity;
 import com.mph.basedroid.activity.CityActivity;
 import com.mph.basedroid.activity.DownloadFileActivity;
 import com.mph.basedroid.activity.Home2Activity;
@@ -16,6 +17,7 @@ import com.mph.basedroid.activity.WelcomeActivity;
 import com.mph.library.base.activity.BaseActivity;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 
@@ -36,6 +38,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     Button actionsheet;
     @BindView(R.id.downloadfile)
     Button downloadfile;
+    @BindView(R.id.mvp)
+    Button mvp;
 
     @Override
     public void initData(Bundle savedInstanceState) {
@@ -52,6 +56,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         pickerview.setOnClickListener(this);
         actionsheet.setOnClickListener(this);
         downloadfile.setOnClickListener(this);
+        mvp.setOnClickListener(this);
     }
 
     @Override
@@ -93,6 +98,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             case R.id.downloadfile:
                 Intent intent9 = new Intent(MainActivity.this, DownloadFileActivity.class);
                 startActivity(intent9);
+                break;
+            case R.id.mvp:
+                Intent intent10 = new Intent(MainActivity.this, City2Activity.class);
+                startActivity(intent10);
                 break;
         }
     }

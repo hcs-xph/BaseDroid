@@ -15,4 +15,9 @@ public abstract class BasePresenter<V> {
         mView = null;
     }
 
+    /**
+     * 取消网络请求
+     */
+    public void cancel(){}
+
 }

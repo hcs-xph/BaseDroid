@@ -13,53 +13,62 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="post请求"
-        />
+        android:textAllCaps="false" />
+
     <Button
         android:id="@+id/loadImg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="加载图片(Glide)"
-        />
+        android:textAllCaps="false" />
+
     <Button
-    android:id="@+id/viewpager"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="测试BasePagerAdapter"
-    />
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="测试BasePagerAdapter"
+        android:textAllCaps="false" />
 
     <Button
         android:id="@+id/home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="测试BaseFragment"
-        />
+        android:textAllCaps="false" />
+
     <Button
         android:id="@+id/home2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="测试FragmentTabAdapter"
-        />
+        android:textAllCaps="false" />
 
     <Button
         android:id="@+id/pickerview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="测试pickerview"
-        />
+        android:textAllCaps="false" />
+
     <Button
         android:id="@+id/actionsheet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="测试actionsheet"
-        />
+        android:textAllCaps="false" />
 
     <Button
         android:id="@+id/downloadfile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="下载文件"
-        />
+        android:text="下载文件" />
 
+    <Button
+        android:id="@+id/mvp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="mvp测试"
+        android:textAllCaps="false" />
 
 
 </LinearLayout>

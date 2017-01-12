@@ -1,4 +1,4 @@
-package com.mph.basedroid.view;
+package com.mph.basedroid.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -10,26 +10,26 @@ import com.mph.basedroid.R;
  * @author wanglei
  * @version 1.5.2
  * @description
- * @createTime 2016/10/31 0031 16:27
+ * @createTime 2016/10/31 16:27
  * @editTime
  * @editor
  */
-public class EmptyView extends RelativeLayout{
+public class LoadingView extends RelativeLayout {
 
-    public EmptyView(Context context) {
+    public LoadingView(Context context) {
         this(context, null);
     }
 
-    public EmptyView(Context context, AttributeSet attrs) {
+    public LoadingView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public EmptyView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public LoadingView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         setupView(context);
     }
 
     private void setupView(Context context){
-        inflate(context, R.layout.view_empty,this);
+        inflate(context, R.layout.view_loading,this);
     }
 }

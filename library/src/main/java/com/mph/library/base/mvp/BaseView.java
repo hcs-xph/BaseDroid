@@ -6,6 +6,10 @@ package com.mph.library.base.mvp;
  */
 public interface BaseView {
 
+    public static final int NET_SUCCESS = 0;
+    public static final int NET_ERROR = 1;
+    public static final int NET_CANCEL = 2;
+
     /**
      * 显示加载view
      */
@@ -14,7 +18,7 @@ public interface BaseView {
     /**
      * 关闭加载view
      */
-    void hideLoadingView();
+    void hideLoadingView(int Tag);
 
     /**
      * 显示加载失败view

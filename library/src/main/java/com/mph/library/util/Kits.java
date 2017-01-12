@@ -2,8 +2,10 @@ package com.mph.library.util;
 
 import android.app.Activity;
 import android.app.ActivityManager;
+import android.app.AlertDialog;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
@@ -1145,6 +1147,50 @@ public class Kits {
         public static final String NETWORK_TYPE_WAP = "wap";
         public static final String NETWORK_TYPE_UNKNOWN = "unknown";
         public static final String NETWORK_TYPE_DISCONNECT = "disconnect";
+
+        /**
+         * 判断是否有网络
+         * @param activity
+         */
+        public static void checkNetworkState(final Context activity) {
+            try {
+                // 判断有没有网
+                ConnectivityManager manager = (ConnectivityManager) activity.getSystemService(Context.CONNECTIVITY_SERVICE);
+                NetworkInfo activeNetworkInfo = manager.getActiveNetworkInfo();
+                if (activeNetworkInfo == null) {
+
+                    // 没网显示一个dialog
+                    AlertDialog.Builder dialog = new AlertDialog.Builder(activity);
+                    dialog.setTitle("提示");
+                    dialog.setMessage("网络已断开,打开系统网络配置");
+                    // 打开网络
+                    dialog.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            // 每个手机已经有一个activity界面打开网络
+                            // <intent_filter><action>open
+                            Intent intent = new Intent(android.provider.Settings.ACTION_SETTINGS);
+                            activity.startActivity(intent);
+                            dialog.cancel();
+                        }
+                    });
+
+                    dialog.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+
+                        }
+                    });
+
+                    dialog.show();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
 
         /**
          * 获取网络类型

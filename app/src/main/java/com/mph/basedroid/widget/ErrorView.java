@@ -1,4 +1,4 @@
-package com.mph.basedroid.view;
+package com.mph.basedroid.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;

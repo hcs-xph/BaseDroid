@@ -5,8 +5,8 @@ import android.view.View;
 import android.widget.Button;
 
 import com.mph.basedroid.R;
-import com.mph.basedroid.view.AgeSelectView;
-import com.mph.basedroid.view.SexSelectView;
+import com.mph.basedroid.widget.AgeSelectView;
+import com.mph.basedroid.widget.SexSelectView;
 import com.mph.library.base.activity.BaseActivity;
 import com.mph.library.log.xLog;
 import com.mph.library.view.pickerview.TimePickerView;
