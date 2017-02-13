@@ -94,6 +94,17 @@ public class RegexUtil {
 	}
 
 	/**
+	 * 判断身份证
+	 * @param s
+	 * @return
+	 */
+	public static boolean isIDcard(String s){
+		Pattern idNumPattern = Pattern.compile("(\\d{14}[0-9a-zA-Z])|(\\d{17}[0-9a-zA-Z])");
+		Matcher m = idNumPattern.matcher(s);
+		return m.matches();
+	}
+
+	/**
 	 * 社保卡号
 	 * @param s
 	 * @return

@@ -23,6 +23,7 @@ import android.text.style.ForegroundColorSpan;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
@@ -47,6 +48,14 @@ import java.util.regex.Pattern;
  * e_mail：aaron1539@163.com
  */
 public class Kits {
+
+    /**
+     * 隐藏软键盘
+     */
+    public static void hideSoftInput(View view){
+        InputMethodManager inputmanger = (InputMethodManager) view.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+        inputmanger.hideSoftInputFromWindow(view.getWindowToken(),0);
+    }
 
     /**
      * 应用相关信息

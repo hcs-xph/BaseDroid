@@ -32,6 +32,9 @@ public abstract class BaseFragment<V, T extends BasePresenter<V>> extends Fragme
         if (context instanceof Activity) {
             this.context = (Activity) context;
         }
+        if (useEventBus()) {
+            BusFactory.getBus().register(this);
+        }
     }
 
     @Nullable
@@ -53,9 +56,7 @@ public abstract class BaseFragment<V, T extends BasePresenter<V>> extends Fragme
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        if (useEventBus()) {
-            BusFactory.getBus().register(this);
-        }
+
         presenter = initPresenter();
         if(presenter!=null){
             presenter.attach((V)this);
@@ -75,12 +76,12 @@ public abstract class BaseFragment<V, T extends BasePresenter<V>> extends Fragme
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        BusFactory.getBus().unregister(this);
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
+        BusFactory.getBus().unregister(this);
         if(presenter!=null){
             presenter.detach();
         }

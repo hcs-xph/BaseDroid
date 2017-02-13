@@ -16,7 +16,7 @@ public interface BaseView {
     void showLoadingView();
 
     /**
-     * 关闭加载view
+     * 关闭加载view,也就是显示内容View
      */
     void hideLoadingView(int Tag);
 
@@ -25,4 +25,9 @@ public interface BaseView {
      * @param msg
      */
     void showFailedView(String msg);
+
+    /**
+     * 显示没有数据View
+     */
+    void showEmptyView();
 }
