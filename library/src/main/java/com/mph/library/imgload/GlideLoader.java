@@ -121,7 +121,7 @@ public class GlideLoader implements ILoader {
 
             @Override
             public void onResourceReady(GlideBitmapDrawable resource, GlideAnimation<? super GlideBitmapDrawable> glideAnimation) {
-                target.setImageBitmap(resource.getBitmap());
+                target.setImageDrawable(resource);
             }
         });
     }
