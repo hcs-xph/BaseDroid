@@ -3,6 +3,7 @@ package com.mph.library.base.adapter;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.app.NavUtils;
 import android.widget.RadioGroup;
 
 import com.mph.library.R;
@@ -21,6 +22,9 @@ public class FragmentTabAdapter implements RadioGroup.OnCheckedChangeListener {
     private int fragmentContentId; // Activity中所要被替换的区域的id
 
     private int currentTab; // 当前Tab页面索引
+    private static final int ANIM_SLID=1;
+    private static final int ANIM_NONE = 2;
+    private int animMode = 2;
 
     private OnRgsExtraCheckedChangedListener onRgsExtraCheckedChangedListener; // 用于让调用者在切换tab时候增加新的功能
 
@@ -45,8 +49,14 @@ public class FragmentTabAdapter implements RadioGroup.OnCheckedChangeListener {
         for(int i = 0; i < rgs.getChildCount(); i++){
             if(rgs.getChildAt(i).getId() == checkedId){
                 Fragment fragment = fragments.get(i);
-                FragmentTransaction ft = obtainFragmentTransaction(i);
-                //FragmentTransaction ft = fragmentActivity.getSupportFragmentManager().beginTransaction();//不带动画
+                FragmentTransaction ft=null;
+                if(animMode == 1){
+                     ft = obtainFragmentTransaction(i);
+                }else if(animMode == 2){
+                    ft = fragmentActivity.getSupportFragmentManager().beginTransaction();//不带动画
+                }else {
+                    throw new RuntimeException("anim type must be ANIM_SLID or ANIM_NONE");
+                }
 
                 getCurrentFragment().onPause(); // 暂停当前tab
 //                getCurrentFragment().onStop(); // 暂停当前tab
@@ -77,8 +87,14 @@ public class FragmentTabAdapter implements RadioGroup.OnCheckedChangeListener {
     private void showTab(int idx){
         for(int i = 0; i < fragments.size(); i++){
             Fragment fragment = fragments.get(i);
-            FragmentTransaction ft = obtainFragmentTransaction(idx);
-            //FragmentTransaction ft = fragmentActivity.getSupportFragmentManager().beginTransaction();//不带动画
+            FragmentTransaction ft=null;
+            if(animMode == 1){
+                ft = obtainFragmentTransaction(i);
+            }else if(animMode == 2){
+                ft = fragmentActivity.getSupportFragmentManager().beginTransaction();//不带动画
+            }else {
+                throw new RuntimeException("anim type must be ANIM_SLID or ANIM_NONE");
+            }
 
             if(idx == i){
                 ft.show(fragment);
@@ -129,5 +145,9 @@ public class FragmentTabAdapter implements RadioGroup.OnCheckedChangeListener {
         public void OnRgsExtraCheckedChanged(RadioGroup radioGroup, int checkedId, int index){
 
         }
+    }
+
+    public void setAnimMode(int animMode) {
+        this.animMode = animMode;
     }
 }
