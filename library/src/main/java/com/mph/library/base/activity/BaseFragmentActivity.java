@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
@@ -19,6 +20,7 @@ import com.mph.library.event.BusFactory;
 import com.mph.library.kit.KnifeKit;
 import com.mph.library.util.ActivityCollector;
 import com.mph.library.util.Kits;
+import com.mph.library.util.MyToast;
 import com.mph.library.util.StatusBarUtil;
 import com.mph.library.view.EmptyContentLayout;
 
@@ -35,6 +37,7 @@ public abstract class BaseFragmentActivity<V,T extends BasePresenter<V>> extends
     protected T presenter;
     protected View errorView;
     private Button refreshBtn;
+    protected MyToast toast = new MyToast();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,15 +50,14 @@ public abstract class BaseFragmentActivity<V,T extends BasePresenter<V>> extends
             setContentView(getLayoutId());
             unbinder = KnifeKit.bind(this);
         }
-//        if(changeStatusBarColor()){
-//            StatusBarUtil.setColor(this, BaseDroidConfig.STATUS_BAT_DEFAULT_COLOR);
-//        }
         if(changeStatusBarColor()){
             if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.KITKAT){
                 StatusBarUtil.setColorNoTranslucent(this, BaseDroidConfig.STATUS_BAT_DEFAULT_COLOR);
             }else{
                 RelativeLayout rl = setTitleViewHeight();
-                if(rl!=null){
+                if(rl.getParent() instanceof FrameLayout){
+                    rl.setLayoutParams(new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, Kits.Dimens.dip2px(this,45)));
+                }else{
                     rl.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, Kits.Dimens.dip2px(this,45)));
                 }
             }
@@ -74,6 +76,8 @@ public abstract class BaseFragmentActivity<V,T extends BasePresenter<V>> extends
         if(presenter!=null){
             presenter.detach();
         }
+        toast = null;
+        ActivityCollector.removeActivity(this);
         BusFactory.getBus().unregister(this);
         super.onDestroy();
     }

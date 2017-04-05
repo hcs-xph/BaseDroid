@@ -18,6 +18,7 @@ import com.mph.library.event.BusFactory;
 import com.mph.library.kit.KnifeKit;
 import com.mph.library.util.ActivityCollector;
 import com.mph.library.util.Kits;
+import com.mph.library.util.MyToast;
 import com.mph.library.util.StatusBarUtil;
 import com.mph.library.view.EmptyContentLayout;
 
@@ -35,6 +36,7 @@ public abstract class BaseActivity<V,T extends BasePresenter<V>> extends Activit
 
     protected View errorView;
     private Button refreshBtn;
+    protected MyToast toast = new MyToast();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,9 +49,6 @@ public abstract class BaseActivity<V,T extends BasePresenter<V>> extends Activit
             setContentView(getLayoutId());
             unbinder = KnifeKit.bind(this);
         }
-//        if(changeStatusBarColor()){
-//            StatusBarUtil.setColor(this, BaseDroidConfig.STATUS_BAT_DEFAULT_COLOR);
-//        }
         if(changeStatusBarColor()){
             if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.KITKAT){
                 StatusBarUtil.setColorNoTranslucent(this, BaseDroidConfig.STATUS_BAT_DEFAULT_COLOR);
@@ -74,6 +73,8 @@ public abstract class BaseActivity<V,T extends BasePresenter<V>> extends Activit
         if(presenter!=null){
             presenter.detach();
         }
+        toast = null;
+        ActivityCollector.removeActivity(this);
         BusFactory.getBus().unregister(this);
         super.onDestroy();
     }

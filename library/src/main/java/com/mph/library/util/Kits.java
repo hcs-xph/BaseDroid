@@ -1442,21 +1442,4 @@ public class Kits {
         }
     }
 
-    /**
-     * 显示toast
-     */
-    public static class Toast{
-
-        private static android.widget.Toast mToast;
-
-        public static void showToast(Context context,String msg){
-            if(mToast == null){
-                mToast = android.widget.Toast.makeText(context,msg, android.widget.Toast.LENGTH_SHORT);
-            }else{
-               mToast.setText(msg);
-            }
-            mToast.show();
-        }
-    }
-
 }

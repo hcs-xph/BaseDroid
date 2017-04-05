@@ -46,6 +46,7 @@ public class FragmentTabAdapter implements RadioGroup.OnCheckedChangeListener {
             if(rgs.getChildAt(i).getId() == checkedId){
                 Fragment fragment = fragments.get(i);
                 FragmentTransaction ft = obtainFragmentTransaction(i);
+                //FragmentTransaction ft = fragmentActivity.getSupportFragmentManager().beginTransaction();//不带动画
 
                 getCurrentFragment().onPause(); // 暂停当前tab
 //                getCurrentFragment().onStop(); // 暂停当前tab
@@ -77,6 +78,7 @@ public class FragmentTabAdapter implements RadioGroup.OnCheckedChangeListener {
         for(int i = 0; i < fragments.size(); i++){
             Fragment fragment = fragments.get(i);
             FragmentTransaction ft = obtainFragmentTransaction(idx);
+            //FragmentTransaction ft = fragmentActivity.getSupportFragmentManager().beginTransaction();//不带动画
 
             if(idx == i){
                 ft.show(fragment);

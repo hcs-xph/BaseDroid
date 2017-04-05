@@ -8,10 +8,14 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
+import com.mph.library.R;
 import com.mph.library.base.mvp.BasePresenter;
 import com.mph.library.event.BusFactory;
 import com.mph.library.kit.KnifeKit;
+import com.mph.library.util.MyToast;
+import com.mph.library.view.EmptyContentLayout;
 
 import butterknife.Unbinder;
 
@@ -25,6 +29,10 @@ public abstract class BaseFragment<V, T extends BasePresenter<V>> extends Fragme
     protected Activity context;
     private Unbinder unbinder;
     protected T presenter;
+
+    protected View errorView;
+    private Button refreshBtn;
+    protected MyToast toast = new MyToast();
 
     @Override
     public void onAttach(Context context) {
@@ -82,6 +90,7 @@ public abstract class BaseFragment<V, T extends BasePresenter<V>> extends Fragme
     public void onDestroy() {
         super.onDestroy();
         BusFactory.getBus().unregister(this);
+        toast = null;
         if(presenter!=null){
             presenter.detach();
         }
@@ -104,5 +113,31 @@ public abstract class BaseFragment<V, T extends BasePresenter<V>> extends Fragme
      */
     protected T initPresenter() {
         return null;
+    }
+
+    /**
+     * 加载失败刷新加载
+     */
+    protected void errorRefresh(){
+
+    }
+
+    /**
+     * 初始化错误页面
+     * @param emptyLayout
+     */
+    protected  void initEmptyView(EmptyContentLayout emptyLayout){
+        emptyLayout.emptyView(LayoutInflater.from(getContext()).inflate(R.layout.view_empty,null));
+        emptyLayout.loadingView(LayoutInflater.from(getContext()).inflate(R.layout.view_loading,null));
+        errorView = LayoutInflater.from(getContext()).inflate(R.layout.view_error, null);
+        refreshBtn = (Button) errorView.findViewById(R.id.refresh);
+        emptyLayout.errorView(errorView);
+
+        refreshBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                errorRefresh();
+            }
+        });
     }
 }

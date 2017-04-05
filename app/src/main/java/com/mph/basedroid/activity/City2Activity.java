@@ -69,6 +69,11 @@ public class City2Activity extends BaseActivity<CityView, CityPresenter> impleme
         emptyLayout2.showError();
     }
 
+    @Override
+    public void showEmptyView() {
+
+    }
+
     public void initEmptyView(EmptyContentLayout emptyLayout) {
         emptyLayout.emptyView(LayoutInflater.from(this).inflate(R.layout.view_empty, null));
         emptyLayout.loadingView(LayoutInflater.from(this).inflate(R.layout.view_loading, null));
