@@ -26,6 +26,8 @@ public interface ILoader {
      */
     void loadNet(ImageView target,String url,Options options);
 
+    void loadNetCircle(ImageView target,String url,Options options);
+
     void loadNet(Context context,String url,Options options,LoadCallBack callBack);
 
     /**
@@ -70,15 +72,18 @@ public interface ILoader {
      * 图片加载中、加载失败默认图片配置
      */
     class Options{
+
+        public static final int RES_NONE = -1;
+
         /**
          * 加载中的资源id
          */
         public int loadingResId = RES_NONE;
+
         /**
          * 加载失败的资源id
          */
         public int loadErrorResId = RES_NONE;
-        public static final int RES_NONE = -1;
 
         /**
          * 返回默认配置

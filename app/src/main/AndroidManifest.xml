@@ -27,7 +27,8 @@
         <activity android:name=".activity.SelectActivity" />
         <activity android:name=".activity.ActionSheetActivity" />
         <activity android:name=".activity.DownloadFileActivity" />
-        <activity android:name=".activity.City2Activity"></activity>
+        <activity android:name=".activity.City2Activity" />
+        <activity android:name=".activity.CircleImgActivity"></activity>
     </application>
 
 </manifest>

@@ -32,6 +32,11 @@ public class GlideLoader implements ILoader {
     }
 
     @Override
+    public void loadNetCircle(ImageView target, String url, Options options) {
+        loadCircle(getRequestManager(target.getContext()).load(url),target,options);
+    }
+
+    @Override
     public void loadNet(Context context, String url, Options options, final LoadCallBack callBack) {
         DrawableTypeRequest request = getRequestManager(context).load(url);
         if(options == null){
@@ -99,11 +104,26 @@ public class GlideLoader implements ILoader {
         getRequestManager(context).pauseRequests();
     }
 
-    private RequestManager getRequestManager(Context context){
-        if(context instanceof Activity){
-            return Glide.with((Activity) context);
+    private void loadCircle(DrawableTypeRequest request, final ImageView target, Options options){
+        if(options == null){
+            options = Options.defaultOptions();
         }
-        return Glide.with(context);
+
+        if(options.loadingResId != Options.RES_NONE){
+            request.placeholder(options.loadingResId);
+        }
+
+        if(options.loadErrorResId!=Options.RES_NONE){
+            request.error(options.loadErrorResId);
+        }
+
+        request.diskCacheStrategy(DiskCacheStrategy.SOURCE).crossFade().into(new SimpleTarget<GlideBitmapDrawable>(){
+
+            @Override
+            public void onResourceReady(GlideBitmapDrawable resource, GlideAnimation<? super GlideBitmapDrawable> glideAnimation) {
+                target.setImageBitmap(resource.getBitmap());
+            }
+        });
     }
 
     private void load(DrawableTypeRequest request,ImageView target,Options options){
@@ -111,16 +131,22 @@ public class GlideLoader implements ILoader {
             options = Options.defaultOptions();
         }
 
-        if(options.loadErrorResId!=Options.RES_NONE){
-            request.error(options.loadErrorResId);
-        }
-
         if(options.loadingResId != Options.RES_NONE){
             request.placeholder(options.loadingResId);
+        }
+
+        if(options.loadErrorResId!=Options.RES_NONE){
+            request.error(options.loadErrorResId);
         }
 
         request.diskCacheStrategy(DiskCacheStrategy.SOURCE).crossFade().into(target);
     }
 
+    private RequestManager getRequestManager(Context context){
+        if(context instanceof Activity){
+            return Glide.with((Activity) context);
+        }
+        return Glide.with(context);
+    }
 
 }

@@ -23,6 +23,13 @@
         android:textAllCaps="false" />
 
     <Button
+        android:id="@+id/loadCircle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="加载圆形图片(Glide)"
+        android:textAllCaps="false" />
+
+    <Button
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -69,6 +76,8 @@
         android:layout_height="wrap_content"
         android:text="mvp测试"
         android:textAllCaps="false" />
+
+
 
 
 </LinearLayout>

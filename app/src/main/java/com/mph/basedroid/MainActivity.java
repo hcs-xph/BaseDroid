@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.mph.basedroid.activity.ActionSheetActivity;
+import com.mph.basedroid.activity.CircleImgActivity;
 import com.mph.basedroid.activity.City2Activity;
 import com.mph.basedroid.activity.CityActivity;
 import com.mph.basedroid.activity.DownloadFileActivity;
@@ -21,7 +22,7 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 
-    public static final String APP_URL = "http://192.168.1.232:9190/api/";
+    public static final String APP_URL = "http://192.168.1.221:9190/api/";
     @BindView(R.id.postBtn)
     Button postBtn;
     @BindView(R.id.loadImg)
@@ -40,6 +41,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     Button downloadfile;
     @BindView(R.id.mvp)
     Button mvp;
+    @BindView(R.id.loadCircle)
+    Button loadCircle;
 
     @Override
     public void initData(Bundle savedInstanceState) {
@@ -57,6 +60,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         actionsheet.setOnClickListener(this);
         downloadfile.setOnClickListener(this);
         mvp.setOnClickListener(this);
+        loadCircle.setOnClickListener(this);
     }
 
     @Override
@@ -102,6 +106,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             case R.id.mvp:
                 Intent intent10 = new Intent(MainActivity.this, City2Activity.class);
                 startActivity(intent10);
+                break;
+            case R.id.loadCircle:
+                Intent intent11 = new Intent(this, CircleImgActivity.class);
+                startActivity(intent11);
                 break;
         }
     }
