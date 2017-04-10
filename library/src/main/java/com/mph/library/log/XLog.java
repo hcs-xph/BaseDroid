@@ -13,6 +13,7 @@ public class xLog {
     public static boolean LOG = BaseDroidConfig.LOG;
     public static String TAG_ROOT = BaseDroidConfig.LOG_TAG;
 
+
     public static void json(String json) {
         json(Log.DEBUG, null, json);
     }
@@ -47,6 +48,12 @@ public class xLog {
         }
     }
 
+    public static void d(String tag,String str){
+        if(LOG){
+            Log.d(tag,str);
+        }
+    }
+
     private static void msg(int logLevel, String tag, String format, Object... args) {
         if (LOG) {
             String formatMsg = LogFormat.formatBorder(new String[]{LogFormat.formatArgs(format, args)});
@@ -68,11 +75,5 @@ public class xLog {
 
     public static void e(String tag, String msg, Object... args) {
         msg(Log.ERROR, tag, msg, args);
-    }
-
-    public static void d(String tag,String str){
-        if(LOG){
-            Log.d(tag,str);
-        }
     }
 }
