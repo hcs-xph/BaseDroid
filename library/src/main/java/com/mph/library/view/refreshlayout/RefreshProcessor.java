@@ -26,7 +26,7 @@ public class RefreshProcessor {
             case MotionEvent.ACTION_MOVE:
                 float dx = ev.getX() - mTouchX;
                 float dy = ev.getY() - mTouchY;
-                if (Math.abs(dx) <= Math.abs(dy)) {//滑动允许最大角度为45度
+                if (Math.abs(dx) <= Math.abs(dy) && Math.abs(dy)>cp.getTouchSlop()) {//滑动允许最大角度为45度
                     if (dy > 0 && !ScrollingUtil.canChildScrollUp(cp.getScrollableView()) && cp.allowPullDown()) {
                         cp.setStatePTD();
                         return true;
