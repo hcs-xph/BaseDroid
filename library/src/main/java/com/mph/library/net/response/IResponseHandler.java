@@ -2,7 +2,9 @@ package com.mph.library.net.response;
 
 import okhttp3.Response;
 
-
+/**
+ * 返回结果处理回调接口
+ */
 public interface IResponseHandler {
 
     void onSuccess(Response response);

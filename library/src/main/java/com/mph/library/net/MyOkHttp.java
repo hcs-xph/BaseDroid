@@ -20,25 +20,20 @@ import okhttp3.OkHttpClient;
  *
  */
 public class MyOkHttp {
-    private static OkHttpClient mOkHttpClient;
+
     public static Handler mHandler = new Handler(Looper.getMainLooper());
+
+    private static OkHttpClient mOkHttpClient;
 
     public OkHttpClient getOkHttpClient() {
         return mOkHttpClient;
     }
 
-    /**
-     * construct
-     */
     public MyOkHttp()
     {
         this(null);
     }
 
-    /**
-     * construct
-     * @param okHttpClient custom okhttpclient
-     */
     public MyOkHttp(OkHttpClient okHttpClient)
     {
         if(mOkHttpClient == null) {
@@ -83,7 +78,7 @@ public class MyOkHttp {
     }
 
     /**
-     * do cacel by tag
+     * 根据tag取消对应的请求
      * @param tag tag
      */
     public void cancel(Object tag) {

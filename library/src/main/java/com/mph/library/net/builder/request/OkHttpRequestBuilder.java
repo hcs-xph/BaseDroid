@@ -1,4 +1,4 @@
-package com.mph.library.net.builder;
+package com.mph.library.net.builder.request;
 
 
 import com.mph.library.net.MyOkHttp;
@@ -25,7 +25,7 @@ public abstract class OkHttpRequestBuilder<T extends OkHttpRequestBuilder> {
      * 异步执行
      * @param responseHandler 自定义回调
      */
-    abstract void enqueue(final IResponseHandler responseHandler);
+    public abstract void enqueue(final IResponseHandler responseHandler);
 
     public OkHttpRequestBuilder(MyOkHttp myOkHttp) {
         mMyOkHttp = myOkHttp;
@@ -82,8 +82,10 @@ public abstract class OkHttpRequestBuilder<T extends OkHttpRequestBuilder> {
 
     //append headers into builder
     protected void appendHeaders(Request.Builder builder, Map<String, String> headers) {
-        Headers.Builder headerBuilder = new Headers.Builder();
+        //TODO header一个key不支持多个值
         if (headers == null || headers.isEmpty()) return;
+
+        Headers.Builder headerBuilder = new Headers.Builder();
 
         for (String key : headers.keySet()) {
             headerBuilder.add(key, headers.get(key));

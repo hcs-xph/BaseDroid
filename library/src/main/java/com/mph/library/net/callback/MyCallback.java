@@ -36,7 +36,6 @@ public class MyCallback implements Callback {
             mResponseHandler.onSuccess(response);
         } else {
             xLog.e("onResponse fail status=" + response.code());
-
             MyOkHttp.mHandler.post(new Runnable() {
                 @Override
                 public void run() {
