@@ -111,8 +111,10 @@ public class UploadBuilder extends OkHttpRequestBuilderHasParam<UploadBuilder> {
     private void appendParams(MultipartBody.Builder builder, Map<String, String> params) {
         if (params != null && !params.isEmpty()) {
             for (String key : params.keySet()) {
-                builder.addPart(Headers.of("Content-Disposition", "form-data; name=\"" + key + "\""),
-                        RequestBody.create(null, params.get(key)));
+                if(params.get(key)!=null){
+                    builder.addPart(Headers.of("Content-Disposition", "form-data; name=\"" + key + "\""),
+                            RequestBody.create(null, params.get(key)));
+                }
             }
         }
     }
@@ -123,11 +125,13 @@ public class UploadBuilder extends OkHttpRequestBuilderHasParam<UploadBuilder> {
             RequestBody fileBody;
             for (String key : files.keySet()) {
                 File file = files.get(key);
-                String fileName = file.getName();
-                fileBody = RequestBody.create(MediaType.parse(guessMimeType(fileName)), file);
-                builder.addPart(Headers.of("Content-Disposition",
-                        "form-data; name=\"" + key + "\"; filename=\"" + fileName + "\""),
-                        fileBody);
+                if(file!=null){
+                    String fileName = file.getName();
+                    fileBody = RequestBody.create(MediaType.parse(guessMimeType(fileName)), file);
+                    builder.addPart(Headers.of("Content-Disposition",
+                            "form-data; name=\"" + key + "\"; filename=\"" + fileName + "\""),
+                            fileBody);
+                }
             }
         }
     }
