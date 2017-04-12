@@ -22,6 +22,8 @@ public class ProgressRequestBody extends RequestBody {
     private RequestBody mRequestBody;
     private BufferedSink mBufferedSink;
 
+
+
     public ProgressRequestBody(RequestBody requestBody, IResponseHandler responseHandler) {
         this.mResponseHandler = responseHandler;
         this.mRequestBody = requestBody;
